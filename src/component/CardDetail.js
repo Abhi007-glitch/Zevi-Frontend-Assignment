@@ -3,17 +3,17 @@ import RatingComponent from "./RatingComponent";
 
 
 const CardDetail = ({name,rating,price,MRP,noOfReviews})=>{
+// console.log(rating,price, MRP,noOfReviews);
 
-noOfReviews=210;
-return (  <div className="flex flex-col justify-start py-2 ">
-<h1 className="font-normal font-sans text-base ">Round neck cotton Tee</h1>
+return (  <div className="flex flex-col w-full h-full justify-start py-2 ">
+<h1 className="font-normal font-sans text-base ">{name}</h1>
 <div class="flex items-center">
-<span class="text-gray-400 text-base line-through mr-2">Rs. 599</span>
-<span class="text-light-purple text-base font-sans font-medium ">Rs.549</span>
+<span class="text-gray-400 text-lg line-through mr-2">Rs. {MRP}</span>
+<span class="text-light-purple text-lg font-sans font-medium ">Rs.{price}</span>
 </div>
 <div className="flex ">
-    <RatingComponent stars={5}/> 
-    <h1 className="font-light font-sans p-[2px] text-xs text-gray-600">({noOfReviews}) </h1>
+    <RatingComponent rating={rating}/> 
+    <h1 className="font-light font-sans pt-[2px] text-sm text-gray-600">({noOfReviews}) </h1>
 </div>
   
 </div>)    

@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './component/Home';
 
+import Home from './component/Home';
+import NavBar from "./component/NavBar";
 function App() {
   return (
-    <div>
+    <div className="flex flex-col">
+      <NavBar />
       <Home />
     </div>
   );

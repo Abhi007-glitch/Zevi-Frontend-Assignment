@@ -4,14 +4,21 @@ import CardDetail from "./CardDetail";
 const ItemCard = (props) => {
   const url = props.url;
   const id = props.id;
+  const name = props.name;
+  const price = props.realPrice;
+  const MRP = props.mrpPrice;
+  const noOfReviews= props.noOfReviews;
+  const rating = props.rating;
+  console.log(name,price,MRP,noOfReviews);
   const [liked, setLiked] = useState(false);
-
+  
   return (
-    <div className=" group flex flex-col justify-center w-40 h-60 lg:w-48 lg:h-[350px] md:w-48 md:h-[350px] ">
-      <div className=" border-2 relative w-full h-full rounded-md flex flex-col   ">
+    <div className="w-52 h-auto lg:w-60  md:w-56  m-2 p-2 ">
+    <div className=" group flex flex-col justify-center  ">
+      <div className="  relative w-full lg:h-80 md:h-[300px] h-72 rounded-md flex flex-col   ">
         <img src={url} className="w-full h-full  object-cover  " />
-        <div className="absolute h-8  bottom-0 w-full flex justify-center items-center bg-light-purple opacity-0 group-hover:opacity-70 transition-opacity">
-          <h1 className="text-base font-sans line-height: 1rem font-normal text-white">
+        <div className="absolute h-1/6  bottom-0 w-full flex justify-center items-center bg-light-purple opacity-0 group-hover:opacity-70 transition-opacity">
+          <h1 className="text-lg font-sans line-height: 1rem font-medium text-white">
             View Product
           </h1>
         </div>
@@ -25,7 +32,7 @@ const ItemCard = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className={`w-6 h-6 absolute top-2 right-2 z-10 ${
+            className={`w-6 h-6 absolute top-3 right-3 z-10 ${
               liked ? "fill-red-600" : "fill-none"
             }  ${
               liked
@@ -40,8 +47,14 @@ const ItemCard = (props) => {
 </svg> */}
         </div>
       </div>
-      <CardDetail {...props} />
+      
+      <div className="w-full h-1/4">
+      <CardDetail name={name} id={id} price={price} MRP={MRP} noOfReviews={noOfReviews} rating={rating} />
+      </div>
+     
     </div>
+    </div>
+   
   );
 };
 
