@@ -9,7 +9,7 @@ const ItemCard = (props) => {
   const MRP = props.mrpPrice;
   const noOfReviews= props.noOfReviews;
   const rating = props.rating;
-  console.log(name,price,MRP,noOfReviews);
+  // console.log(name,price,MRP,noOfReviews);
   const [liked, setLiked] = useState(false);
   
   return (
